@@ -1,5 +1,5 @@
 class Projects::TasksController < ApplicationController
- before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:show, :new, :edit, :create, :update, :destroy]
 
   def show
