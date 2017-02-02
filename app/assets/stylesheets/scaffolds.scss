@@ -1,3 +1,29 @@
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: stretch;
+    height: stretch;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+}
+
+.flex-item {
+    background-color: #a6dffc;
+    width: 150px;
+    height: 100px;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.flex-item2 {
+    background-color: lightgrey;
+    width: 140px;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
 body {
   background-color: #fff;
   color: #333;
