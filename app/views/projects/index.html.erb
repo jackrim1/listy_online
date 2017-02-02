@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
-
+<% if user_signed_in? %>
+<%= link_to 'New Project', new_project_path %>
 
     <div class="flex-container">
     <% @projects.each do |project| %>
       <div class="flex-item">
-        <%= project.title %>
+        <div class="p"><%= project.title %>
         <!--
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         -->
-        <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'X', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
         </li>
 
           <% project.tasks.each do |task| %>
-           <div class="flex-item2"><%= task.title %> </div>
+           <div class="flex-item2"><%= task.title %>
+           </div>
 
           <% end %>
           </div>
@@ -23,5 +26,7 @@
  </div>
 
 <br>
+<% else %>
+Sign up/Sign in to start a new project
+<% end %>
 
-<%= link_to 'New Project', new_project_path %>
