@@ -7,6 +7,7 @@ class Projects::TasksController < ApplicationController
 
   def new
     @task = Task.new
+    redirect_to '/projects'
   end
 
   def edit
