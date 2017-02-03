@@ -16,6 +16,7 @@
 
           <% project.tasks.each do |task| %>
            <div class="flex-item2"><%= task.title %>
+            <%= link_to 'X', [project, task], method: :delete, data: { confirm: 'Are you sure?' } %>
            </div>
           <% end %>
 

@@ -2,7 +2,12 @@ class Projects::TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:show, :new, :edit, :create, :update, :destroy]
 
+  def index
+    @tasks = Task.all
+  end
+
   def show
+    @task = Task.find(task_params)
   end
 
   def new
@@ -11,6 +16,7 @@ class Projects::TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(task_params)
   end
 
   def create
@@ -45,6 +51,7 @@ class Projects::TasksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to project_url(@task.project_id), notice: 'Task was successfully deleted.' }
         format.json { head :no_content }
+        #redirect_to '/projects'
       end
     end
 
