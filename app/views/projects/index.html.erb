@@ -6,9 +6,9 @@
     <% @projects.each do |project| %>
       <div class="flex-item">
         <div class="p"><%= project.title %>
-        <!--
+
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <!--<td><%= link_to 'Edit', edit_project_path(project) %></td>
         -->
         <%= link_to 'X', project, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
@@ -16,14 +16,11 @@
 
           <% project.tasks.each do |task| %>
            <div class="flex-item2"><%= task.title %>
-
-
            </div>
-
           <% end %>
+
+          <%= link_to 'New Task', new_project_task_path(project) %>
           </div>
-
-
     <% end %>
  </div>
 
