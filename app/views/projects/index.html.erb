@@ -10,20 +10,25 @@ ras<p id="notice"><%= notice %></p>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         -->
+        <div class="alignright">
         <%= link_to 'X', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
         </div>
         </li>
 
           <% project.tasks.each do |task| %>
            <div class="flex-item2"><%= task.title %>
 
+            <div class="alignright">
             <%= link_to 'X', [project, task], method: :delete, data: { confirm: 'Are you sure?' } %>
-
+            </div>
            </div>
 
           <% end %>
 
+          <div class="p">
           <%= link_to 'New Task', new_project_task_path(project) %>
+          </div>
           </div>
 
 
