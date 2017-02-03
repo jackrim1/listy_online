@@ -41,10 +41,11 @@ class Projects::TasksController < ApplicationController
 
     def destroy
       @task.destroy
-      respond_to do |format|
-        format.html { redirect_to project_url(@task.project_id), notice: 'Task was successfully deleted.' }
-        format.json { head :no_content }
-      end
+      redirect_to '/projects'
+      # respond_to do |format|
+      #   format.html { redirect_to project_url(@task.project_id), notice: 'Task was successfully deleted.' }
+      #   format.json { head :no_content }
+      # end
     end
 
     private
