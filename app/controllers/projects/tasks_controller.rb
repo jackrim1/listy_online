@@ -16,22 +16,24 @@ class Projects::TasksController < ApplicationController
       @task = Task.new(task_params)
       @task.project_id = @project.id
 
-      respond_to do |format|
+      # respond_to do |format|
         if @task.save
-          format.html { redirect_to project_path(@task.project_id), notice: 'Task was successfully created.' }
-          format.json { render :show, status: :created, location: @task }
+          redirect_to '/projects'
+          # format.html { redirect_to project_path(@task.project_id), notice: 'Task was successfully created.' }
+          # format.json { render :show, status: :created, location: @task }
         else
           format.html { render :new }
           format.json { render json: @task.errors, status: :unprocessable_entity }
-        end
+        # end
       end
     end
 
     def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to project_path(@task.project_id), notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
+        redirect_to '/projects'
+        # format.html { redirect_to action: "index", notice: 'Task was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }
