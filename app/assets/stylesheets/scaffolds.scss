@@ -96,6 +96,14 @@ div {
   display: table;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p, div {
+  font-family: 'Roboto', sans-serif;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;
