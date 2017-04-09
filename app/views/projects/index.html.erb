@@ -18,10 +18,11 @@
         </li>
 
           <% project.tasks.each do |task| %>
-           <div class="flex-item2"><%= task.title %>
+           <div class="flex-item2">
+           <%= task.title %>
 
             <div class="alignright">
-            <%= link_to 'X', [project, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'X', [project, task], method: :delete %>
             </div>
            </div>
 
